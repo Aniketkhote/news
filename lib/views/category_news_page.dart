@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:news/controllers/news_controller.dart';
 import 'package:news/views/news_page.dart';
 import 'package:news/widgets/news_card.dart';
+import 'package:customize/customize.dart';
 
 class CategoryNewsPage extends StatefulWidget {
   final String category;
@@ -30,20 +31,11 @@ class _CategoryNewsPageState extends State<CategoryNewsPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.back(),
         ),
-        title: Text(
-          widget.category.capitalize,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+        title:
+            Text(widget.category.capitalize).color(Colors.black).xl.extraBold,
       ),
       body: SafeArea(
         child: buildNews(),

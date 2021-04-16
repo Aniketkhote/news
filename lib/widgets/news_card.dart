@@ -1,10 +1,11 @@
+import 'package:customize/customize.dart';
 import 'package:flutter/material.dart';
 
 Widget buildNewsCard({String imgUrl, String title, String excerpt}) {
   return Container(
     width: double.infinity,
     color: Colors.white,
-    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+    margin: FxMargin.m12,
     child: ClipRRect(
       borderRadius: BorderRadius.circular(15),
       child: Column(
@@ -17,28 +18,17 @@ Widget buildNewsCard({String imgUrl, String title, String excerpt}) {
             width: double.infinity,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: FxPadding.p12,
             child: Column(
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
+                Text(title)
+                    .color(Colors.black)
+                    .xl
+                    .extraBold
+                    .maxLine(2)
+                    .ellipsis,
                 SizedBox(height: 8),
-                Text(
-                  excerpt,
-                  style: TextStyle(
-                    color: Colors.black54,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
+                Text(excerpt).color(Colors.black54).maxLine(2).ellipsis,
               ],
             ),
           ),

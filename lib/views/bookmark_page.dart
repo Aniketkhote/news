@@ -4,6 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:news/controllers/news_controller.dart';
 import 'package:news/views/news_page.dart';
 import 'package:news/widgets/news_card.dart';
+import 'package:customize/customize.dart';
 
 class BookmarkPage extends StatelessWidget {
   final NewsController _controller = Get.find();
@@ -12,20 +13,10 @@ class BookmarkPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.back(),
         ),
-        title: Text(
-          "Bookmark",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+        title: Text("Bookmark").color(Colors.black).xl.extraBold,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

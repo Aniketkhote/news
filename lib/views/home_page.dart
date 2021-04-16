@@ -5,6 +5,7 @@ import 'package:news/views/bookmark_page.dart';
 import 'package:news/views/category_news_page.dart';
 import 'package:news/views/news_page.dart';
 import 'package:news/widgets/news_card.dart';
+import 'package:customize/customize.dart';
 
 class HomePage extends StatelessWidget {
   final NewsController _controller = Get.put(NewsController());
@@ -12,20 +13,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "News".toUpperCase(),
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+        title: Text("News".toUpperCase()).color(Colors.black).xl.extraBold,
         actions: [
           IconButton(
-            icon: Icon(
-              Icons.bookmark,
-              color: Colors.black,
-            ),
+            icon: Icon(Icons.bookmark, color: Colors.black),
             onPressed: () => Get.to(BookmarkPage()),
           ),
         ],
@@ -58,19 +49,15 @@ class HomePage extends StatelessWidget {
               Get.to(CategoryNewsPage(category: _controller.category[index]));
             },
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              padding: FxPadding.p12,
+              margin: FxMargin.m12,
               decoration: BoxDecoration(
                 color: Colors.black,
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: FxRadius.radius30,
               ),
-              child: Text(
-                _controller.category[index].toString().capitalize,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
+              child: Text(_controller.category[index].toString().capitalize)
+                  .color(Colors.white)
+                  .extraBold,
             ),
           );
         },

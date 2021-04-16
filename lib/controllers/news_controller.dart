@@ -34,14 +34,7 @@ class NewsController extends GetxController {
 
       if (news != null) {
         for (var item in news["articles"]) {
-          newsList.add(
-            NewsModel(
-              title: item["title"],
-              description: item["description"],
-              urlToImage: item["urlToImage"],
-              url: item["url"],
-            ),
-          );
+          newsList.add(NewsModel.fromJson(item));
         }
       }
     } catch (e) {} finally {
@@ -57,14 +50,7 @@ class NewsController extends GetxController {
 
       if (news != null) {
         for (var item in news["articles"]) {
-          categoryNewsList.add(
-            NewsModel(
-              title: item["title"],
-              description: item["description"],
-              urlToImage: item["urlToImage"],
-              url: item["url"],
-            ),
-          );
+          categoryNewsList.add(NewsModel.fromJson(item));
         }
       }
     } catch (e) {} finally {

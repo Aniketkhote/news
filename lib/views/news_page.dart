@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:share/share.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:customize/customize.dart';
 
 class NewsPage extends StatefulWidget {
   final String url;
@@ -26,33 +27,17 @@ class _NewsPageState extends State<NewsPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Get.back(),
         ),
-        title: Text(
-          "News".toUpperCase(),
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+        title: Text("News".toUpperCase()).color(Colors.black).xl.extraBold,
         actions: [
           IconButton(
-            icon: Icon(
-              Icons.share,
-              color: Colors.black,
-            ),
+            icon: Icon(Icons.share, color: Colors.black),
             onPressed: () => Share.share(widget.url),
           ),
           IconButton(
-            icon: Icon(
-              Icons.bookmark_border,
-              color: Colors.black,
-            ),
+            icon: Icon(Icons.bookmark_border, color: Colors.black),
             onPressed: () => null,
           ),
         ],
